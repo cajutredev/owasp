@@ -10,6 +10,13 @@ Java JDK 17
 Windows x64 Installer
 https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 
+VS Code
+https://code.visualstudio.com/download
+Extensiones para VSCODE
+* Extension Pack for Java
+* Liberty Tools
+* Material Icon Theme (opcional)
+
 ---------------------------------------------
 Software opcional
 ---------------------------------------------
@@ -22,11 +29,3 @@ https://nmap.org/download
 
 Wireshark
 https://www.wireshark.org/download.html
-
-VS Code
-https://code.visualstudio.com/download
-
-Extensiones para VSCODE
-* Extension Pack for Java
-* Liberty Tools
-* Material Icon Theme (opcional)
