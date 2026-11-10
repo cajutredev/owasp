@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+    version="3.2">
+
+    <persistence-unit name="UsuariosPU" transaction-type="JTA">
+        <jta-data-source>jdbc/Usuarios</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            <!-- Mostrar consultas SQL -->
+            <property name="hibernate.show_sql" value="true" />
+
+            <!-- Formatear consultas SQL -->
+            <property name="hibernate.format_sql" value="true" />
+
+            <!-- Resaltar SQL en consola -->
+            <property name="hibernate.highlight_sql" value="true" />
+        </properties>
+
+    </persistence-unit>
+
+
+</persistence>
