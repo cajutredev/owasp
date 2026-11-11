@@ -28,7 +28,6 @@ public class EmailService {
             long failureCount,
             OffsetDateTime eventTimestamp) throws MessagingException {
     
-        System.out.println("$$$%%%%%%%se van aenviar correo");
         SmtpConfiguration configuration = SmtpConfiguration.fromEnvironment();
         Properties properties = new Properties();
         properties.setProperty("mail.smtp.host", configuration.host());
@@ -63,11 +62,7 @@ public class EmailService {
                 new InternetAddress[] {new InternetAddress(configuration.adminAddress(), true)});
         message.setSubject(SUBJECT, "UTF-8");
         message.setText("""
-                        Multiple failed authentication attempts were detected.
 
-                        Account email: %s
-                        Failed attempts since the previous alert: %d
-                        Event timestamp: %s
                         """.formatted(accountEmail, failureCount, eventTimestamp),
                 "UTF-8");
         System.out.println("se va a enviar correo");

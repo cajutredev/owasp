@@ -59,5 +59,5 @@
 
     <keyStore id="defaultKeyStore" password="{aes}AhCeNzee4QjQEgphsVwgsKMMvNulA9ZtPJDvN/PVsFtPQELgk8AQJ/G+rIv5L/4s903tRyK+jwtyWL57pwwgylCi63ek6Tsz47fOOdOWHIYnTyrsmOpi/kn4NW1853ZmXhvJVPA62DLvmg==" />
 
-    <include location="C:\CursoOWASP\owasp2025\A03-A04\secret\aesConfig.xml" />
+    <include location="C:\CursoOWASP\owasp2025\A03-A04-A08\secret\aesConfig.xml" />
 </server>

@@ -3,6 +3,7 @@ package com.demo.controller;
 import com.demo.entity.Usuario;
 import com.demo.security.PasswordHasherSha256;
 import com.demo.security.CsrfTokenVulnerable;
+import com.demo.security.PasswordHasher256Salt;
 import com.demo.service.DepartamentoService;
 import com.demo.service.RolService;
 import com.demo.service.UsuarioService;
@@ -139,7 +140,8 @@ public class UsuarioController extends HttpServlet {
                 required(request, "primerApellido", 100),
                 optional(request, "segundoApellido", 100),
                 email(request),
-                PasswordHasherSha256.hash(password),
+                // PasswordHasherSha256.hash(password),
+                PasswordHasher256Salt.hash(password),
                 optional(request, "telefono", 20),
                 departmentId,
                 roleId);

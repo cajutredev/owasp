@@ -2,6 +2,8 @@ package com.demo.service;
 
 import com.demo.entity.Usuario;
 import com.demo.repository.UsuarioRepository;
+import com.demo.repository.UsuarioRepositoryData;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.Cache;
@@ -14,6 +16,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Inject
     private UsuarioRepository usuarioRepository;
+
+    @Inject
+    private UsuarioRepositoryData usuarioRepositoryData;
 
     @PersistenceContext(unitName = "UsuariosPU")
     private EntityManager entityManager;
@@ -28,7 +33,7 @@ public class UsuarioServiceImpl implements UsuarioService {
             String telefono,
             Long departamentoId,
             Long rolId) {
-        usuarioRepository.create(
+        usuarioRepositoryData.create(
                 nombre,
                 primerApellido,
                 segundoApellido,
