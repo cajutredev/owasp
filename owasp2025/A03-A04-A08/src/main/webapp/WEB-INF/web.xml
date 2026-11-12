@@ -3,6 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
          version="6.1">
+
+    <filter>
+        <filter-name>ExcepcionNoManejadaFilter</filter-name>
+        <filter-class>com.demo.exception.ExcepcionNoManejadaFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ExcepcionNoManejadaFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
         <filter-class>com.demo.controller.AuthenticationFilter</filter-class>
@@ -15,9 +25,28 @@
     <session-config>
         <session-timeout>20</session-timeout>
         <cookie-config>
-            <!-- <http-only>true</http-only> -->
-            <http-only>false</http-only>
+            <http-only>true</http-only>
         </cookie-config>
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/error/500.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/WEB-INF/error/500.jsp</location>
+    </error-page>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Aplication HTTPS</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
 </web-app>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <File name="AuthenticationFile"
+              fileName="${sys:auth.log.file:-logs/authentication-security.log}"
+              append="true">
+            <PatternLayout pattern="%d{ISO8601} %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.demo.service.AutenticacionServiceImpl"
+                level="info"
+                additivity="false">
+            <AppenderRef ref="AuthenticationFile"/>
+        </Logger>
+        <Logger name="com.demo.service.EmailService"
+                level="info"
+                additivity="false">
+            <AppenderRef ref="AuthenticationFile"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="AuthenticationFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
