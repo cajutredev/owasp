@@ -3,6 +3,7 @@ package com.demo.controller;
 import com.demo.entity.Usuario;
 import com.demo.security.PasswordHasherSha256;
 import com.demo.security.CsrfTokenVulnerable;
+import com.demo.security.JakartaPasswordHasher;
 import com.demo.security.PasswordHasher256Salt;
 import com.demo.service.DepartamentoService;
 import com.demo.service.RolService;
@@ -27,6 +28,9 @@ public class UsuarioController extends HttpServlet {
 
     @Inject
     private RolService rolService;
+
+    @Inject 
+    private JakartaPasswordHasher passwordHasher;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -141,7 +145,8 @@ public class UsuarioController extends HttpServlet {
                 optional(request, "segundoApellido", 100),
                 email(request),
                 // PasswordHasherSha256.hash(password),
-                PasswordHasher256Salt.hash(password),
+                //PasswordHasher256Salt.hash(password),
+                passwordHasher.hash(password),
                 optional(request, "telefono", 20),
                 departmentId,
                 roleId);

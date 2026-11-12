@@ -1,0 +1,8 @@
+$env:SMTP_HOST = "sandbox.smtp.mailtrap.io"
+$env:SMTP_PORT = "2525"
+$env:SMTP_FROM = "alerts@ejemplo.com"
+$env:SECURITY_ADMIN_EMAIL = "admin@ejemplo.com"
+$env:SMTP_USERNAME = "ca1c1253baef24"
+$env:SMTP_STARTTLS = "true"
+$env:SMTP_SSL = "false"
+$env:SMTP_PASSWORD = "bf0d4f81e7479a"
